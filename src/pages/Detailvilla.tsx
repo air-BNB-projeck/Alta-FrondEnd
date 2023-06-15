@@ -9,6 +9,7 @@ interface StayData {
   StayImages: string;
   name: string;
   price: string;
+  description: string;
 }
 
 const Detailvilla = () => {
@@ -19,7 +20,7 @@ const Detailvilla = () => {
     const fetchStay = async () => {
       try {
         const response = await axios.get(
-          `https://immersive-dashapi.my.id/stays/{id}`
+          `https://immersive-dashapi.my.id/stays/${id}`
         );
         setStay(response.data);
         console.log("Data Homestay:", response.data);
@@ -31,6 +32,11 @@ const Detailvilla = () => {
     fetchStay();
   }, [id]);
 
+  const handleAddToCart = () => {
+    // Implement logic to add item to cart
+    console.log("Item added to cart:", stay);
+  };
+
   return (
     <div className="w-screen h-screen top-0 overflow-x-hidden z-0">
       <Navbar />
@@ -41,10 +47,11 @@ const Detailvilla = () => {
             image={stay.StayImages}
             name={stay.name}
             price={stay.price}
-            description="Deskripsi Homestay"
+            description={stay.description}
+            onAddToCart={handleAddToCart}
           />
         ) : (
-          <p>Tidak ada data homestay yang tersedia.</p>
+          <p className="text-black">Tidak ada data homestay yang tersedia.</p>
         )}
       </div>
     </div>
