@@ -32,8 +32,18 @@ const Detailvilla = () => {
   return (
     <div className="w-screen h-screen top-0 overflow-x-hidden z-0">
       <Navbar />
+      <h1 className="text-black text-center mt-4">Penginapan Anda</h1>
       <div className="flex flex-wrap justify-center mt-10 gap-20 mb-10 p-3">
-        {stay ? <Carddetail image={stay.images} name={stay.name} price={stay.price} description="Deskripsi Homestay" /> : <p>Tidak ada data homestay yang tersedia.</p>}
+        {stay ? (
+          <Carddetail
+            image={stay.images}
+            name={stay.name}
+            price={stay.price}
+            description="Deskripsi Homestay"
+          />
+        ) : (
+          <p>Tidak ada data homestay yang tersedia.</p>
+        )}
       </div>
     </div>
   );

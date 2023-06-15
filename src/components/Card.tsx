@@ -19,7 +19,7 @@ const Card: FC<cardProps> = ({ images, name, price, rating }) => {
     <div>
       <div className="card w-100 bg-sky-100 shadow-xl text-black">
         <figure>
-          <img src={images} alt="gambar villa" />
+          <img className="w-60" src={images} alt="gambar villa" />
         </figure>
         <div className="absolute top-0 right-0 mr-5 mt-3"></div>
         <div className="card-body">
@@ -32,7 +32,10 @@ const Card: FC<cardProps> = ({ images, name, price, rating }) => {
           </p>
 
           <div className="card-actions justify-end">
-            <button className="btn btn-outline btn-success" onClick={handleDetailVillaClick}>
+            <button
+              className="btn btn-outline btn-success"
+              onClick={handleDetailVillaClick}
+            >
               Detail
             </button>
           </div>
