@@ -3,9 +3,9 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 w-screen">
+      <div className="navbar bg-cyan-600 w-screen">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">Air BNB</a>
+          <a className="btn btn-ghost normal-case text-xl text-black border-x-8">Air BNB</a>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">

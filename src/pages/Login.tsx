@@ -42,7 +42,7 @@ const Login: React.FC = () => {
 
         console.log(response.data);
 
-        setCookie("token", response.data.data.token, { path: "/" });
+        setCookie("token", response.data.data.accessToken, { path: "/" });
 
         Swal.fire({
           position: "center",
@@ -73,13 +73,13 @@ const Login: React.FC = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full m-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full m-10 ">
       <div className="hidden sm:block">
         <img className="w-full h-full object-cover" src={loginImg} alt="" />
       </div>
 
-      <div className="bg-White-800 flex flex-col justify-center">
-        <form className="max-w-[400px] w-full mx-auto rounded-lg bg-teal-300 p-8 px-8">
+      <div className="bg-White-800 flex flex-col justify-center bg-cyan-300 ">
+        <form className="max-w-[400px] w-full mx-auto rounded-lg bg-teal-300 p-8 px-8 border-x-8">
           <h2 className="text-4xl text-black font-bold text-center">Login</h2>
           <div className="flex flex-col text-black py-2">
             <label>Email</label>

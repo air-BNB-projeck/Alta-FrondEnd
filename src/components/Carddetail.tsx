@@ -1,25 +1,18 @@
 import React from "react";
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
-
 interface cardProps {
-  images: string;
+  image: string;
   name: string;
   price?: string | number;
   rating?: string | number;
+  description?: String;
 }
-const Card: FC<cardProps> = ({ images, name, price, rating }) => {
-  const navigate = useNavigate();
-
-  const handleDetailVillaClick = () => {
-    navigate("/Detailvilla");
-  };
-
+const Carddetail: FC<cardProps> = ({ image, name, price, rating, description }) => {
   return (
     <div>
       <div className="card w-100 bg-sky-100 shadow-xl text-black">
         <figure>
-          <img src={images} alt="gambar villa" />
+          <img src={image} alt="gambar villa" />
         </figure>
         <div className="absolute top-0 right-0 mr-5 mt-3"></div>
         <div className="card-body">
@@ -30,11 +23,11 @@ const Card: FC<cardProps> = ({ images, name, price, rating }) => {
           <p className="font-medium">
             <span className="text-2xl text-blue-700">{price}</span> / malam
           </p>
-
+          <p className="font-medium">
+            <span className="text-xl text-blue-700">{description}</span> / malam
+          </p>
           <div className="card-actions justify-end">
-            <button className="btn btn-outline btn-success" onClick={handleDetailVillaClick}>
-              Detail
-            </button>
+            <button className="btn btn-outline btn-success">Detail</button>
           </div>
         </div>
       </div>
@@ -42,4 +35,4 @@ const Card: FC<cardProps> = ({ images, name, price, rating }) => {
   );
 };
 
-export default Card;
+export default Carddetail;
