@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Swal from "sweetalert2";
 
@@ -86,7 +86,9 @@ const Login: React.FC = () => {
             <input
               value={formik.values.email}
               onChange={formik.handleChange}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline ${formik.values.email === "" ? "bg-white" : ""}`}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline ${
+                formik.values.email === "" ? "bg-white" : ""
+              }`}
               id="email"
               type="text"
               placeholder="Email"
@@ -97,12 +99,18 @@ const Login: React.FC = () => {
             <input
               value={formik.values.password}
               onChange={formik.handleChange}
-              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline ${formik.values.password === "" ? "bg-white" : ""}`}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-200 leading-tight focus:outline-none focus:shadow-outline ${
+                formik.values.password === "" ? "bg-white" : ""
+              }`}
               id="password"
               type={showPassword ? "text" : "password"}
               placeholder="********"
             />
-            <a type="button" className="absolute right-2 mt-3 text-gray-500" onClick={togglePasswordVisibility}>
+            <a
+              type="button"
+              className="absolute right-2 mt-3 text-gray-500"
+              onClick={togglePasswordVisibility}
+            >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </a>
           </div>
@@ -113,10 +121,17 @@ const Login: React.FC = () => {
             <p>Forgot Password</p>
           </div>
 
-          <div className="flex items-center justify-center">
-            <button onClick={LoginHandle} className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+          <div className="flex items-center justify-center mt-4">
+            <button
+              onClick={LoginHandle}
+              className="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="button"
+            >
               Log In
             </button>
+            <Link to="/RegisterForm" className="text-center text-blue-500 pl-4">
+              Register Now
+            </Link>
           </div>
         </form>
       </div>
