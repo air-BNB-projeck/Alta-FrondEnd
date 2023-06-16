@@ -17,7 +17,7 @@ const Card: FC<cardProps> = ({ images, name, price, rating }) => {
 
   return (
     <div>
-      <div className="card w-100 bg-sky-100 shadow-xl text-black">
+      <div className="card w-96  bg-sky-100 shadow-xl text-black">
         <figure>
           <img className="w-60" src={images} alt="gambar villa" />
         </figure>

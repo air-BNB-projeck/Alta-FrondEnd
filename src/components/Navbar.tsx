@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/Login");
+  };
+  const handleRegisterClick = () => {
+    navigate("/RegisterForm");
+  };
   return (
     <div>
       <div className="navbar bg-cyan-600 w-screen">
@@ -8,9 +17,15 @@ const Navbar = () => {
           <a className="btn btn-ghost normal-case text-xl text-black border-x-8">Air BNB</a>
         </div>
         <div className="flex-none gap-2">
-          <div className="form-control">
+          <div className="form-control flex">
             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
           </div>
+          <button className="btn btn-outline btn-success" onClick={handleLoginClick}>
+            Login
+          </button>
+          <button className="btn btn-outline btn-success" onClick={handleRegisterClick}>
+            Register
+          </button>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
