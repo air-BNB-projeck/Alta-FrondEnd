@@ -129,12 +129,13 @@ const Login: React.FC = () => {
             >
               Log In
             </button>
-            <Link to="/RegisterForm" className="text-center text-blue-500 pl-4">
+            <p className="pl-4 text-black">or</p>
+            <Link to="/RegisterForm" className="text-center text-blue-500 pl-4 underline">
               Register Now
             </Link>
           </div>
         </form>
-      </div>
+      </div>  
     </div>
     // <div className="min-h-screen w-screen bg-gray-100 flex items-center justify-center">
     //   <div className="bg-white p-6 rounded-md shadow-md">

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 interface StayData {
   id: number;
-  images: string;
+  StayImages: string;
   name: string;
   price: string;
 
@@ -39,7 +39,7 @@ const Home = () => {
           stays.map((stay) => (
             <Card
               key={stay.id}
-              images={stay.images}
+              images={stay.StayImages}
               name={stay.name}
               price={stay.price}
               rating={stay.rating}
